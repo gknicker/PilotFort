@@ -1,0 +1,33 @@
+Hosting at SmarterASP.net
+IP address 205.144.171.172
+FTP username gknicker-001
+
+Google Domain Configuration
+https://domains.google.com/registrar#z=a&d=5787363,pilotfort.com&chp=z,d
+
+Google Timezone API Key
+https://console.developers.google.com/apis/credentials?project=pilotfort-1491187004121
+
+Sunrise Sunset
+https://sunrise-sunset.org/api
+
+Night Flying/Landings Reference
+https://www.aopa.org/news-and-media/all-news/2005/october/11/night-flying-sort-through-the-different-definitions-of-night
+
+Two Factor Authentication
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
+
+OAuth2 Integration
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
+
+FAA Web Services Catalog (contact FAA to become internal developer for access to others)
+http://services.faa.gov/docs/services/
+
+Downloadable Aircraft Registry
+http://registry.faa.gov/database/ReleasableAircraft.zip
+
+N-Number Lookup (HTML 36k)
+http://registry.faa.gov/aircraftinquiry/NNum_Results.aspx?NNumbertxt=N905EH
+
+N-Number Lookup Alternate (HTML 32k)
+http://flightaware.com/resources/registration/N905EH

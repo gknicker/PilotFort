@@ -1,0 +1,30 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+img.navbar-brand {
+	padding: 5px 0px 8px 15px;
+}
+
+@media (min-width: 768px) {
+	img.navbar-brand {
+		padding: 5px 15px 8px 0px;
+	}
+}
+
+.top10 {
+	padding-top: 10px;
+}
+
+.top20 {
+	padding-top: 20px;
+}
+
+.top40 {
+	padding-top: 44px;
+}
+
+.bot-20 {
+	margin-bottom: -20px;
+}

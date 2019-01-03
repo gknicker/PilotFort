@@ -1,0 +1,92 @@
+﻿@model PilotFort.Models.FlightLogModel
+@{
+    ViewBag.Title = "Log";
+}
+
+<div class="row">
+	<div class="col-sm-6" id="sunrisesunset">
+	</div>
+	<div class="col-sm-6 text-right" id="geolocation">
+	</div>
+</div>
+
+<div class="row bot-20">
+	<h4>New Flight</h4>
+</div>
+<div class="row">
+	@using (Html.BeginForm("Index", "Log")) {
+		@Html.AntiForgeryToken()
+		@Html.ValidationSummary(true)
+		<div class="col-sm-3 top20">
+			@Html.LabelFor(model => model.AircraftId, new { @class = "control-label" })
+			@Html.DropDownListFor(model => model.AircraftId, new SelectList(Model.Aircraft, "Id", "Display", Model.Aircraft.Count == 1 ? Model.Aircraft[0] : null), new { @class = "form-control focus" })
+			@Html.ValidationMessageFor(model => model.AircraftId, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-2 top20">
+			@Html.LabelFor(model => model.FlightDate, new { @class = "control-label" })
+			@Html.TextBoxFor(model => model.FlightDate, new { @class = "form-control", maxlength = "10" })
+			@Html.ValidationMessageFor(model => model.FlightDate, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-2 top20">
+			@Html.LabelFor(model => model.FlightBeginTime, new { @class = "control-label" })
+			@Html.TextBoxFor(model => model.FlightBeginTime, new { @class = "form-control", maxlength = "8" })
+			@Html.ValidationMessageFor(model => model.FlightBeginTime, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-2 top20">
+			@Html.LabelFor(model => model.FlightEndTime, new { @class = "control-label" })
+			@Html.TextBoxFor(model => model.FlightEndTime, new { @class = "form-control", maxlength = "8" })
+			@Html.ValidationMessageFor(model => model.FlightEndTime, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-1 top20">
+			@Html.LabelFor(model => model.HobbsHours, new { @class = "control-label" })
+			@Html.TextBoxFor(model => model.HobbsHours, new { @class = "form-control", maxlength = "5" })
+			@Html.ValidationMessageFor(model => model.HobbsHours, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-1">
+			@Html.LabelFor(model => model.NightLandings, new { @class = "control-label" })
+			@Html.TextBoxFor(model => model.NightLandings, new { @class = "form-control", maxlength = "1" })
+			@Html.ValidationMessageFor(model => model.NightLandings, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-sm-1 top40">
+			<input type="submit" class="btn btn-primary pull-right" value="Save" />
+		</div>
+	}
+</div>
+<hr />
+<div class="row">
+	<h4>Flight Log</h4>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>@Html.DisplayNameFor(x => x.AircraftId)</th>
+					<th>@Html.DisplayNameFor(x => x.AircraftManufacturer)</th>
+					<th>@Html.DisplayNameFor(x => x.AircraftModel)</th>
+					<th>@Html.DisplayNameFor(x => x.FlightBeginDisplay)</th>
+					<th>@Html.DisplayNameFor(x => x.FlightEndDisplay)</th>
+					<th>@Html.DisplayNameFor(x => x.HobbsHours)</th>
+					<th>@Html.DisplayNameFor(x => x.NightLandings)</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (PilotFort.Models.Data.FlightLog flightLog in Model.FlightLog) {
+				<tr>
+					<td>@flightLog.AircraftId</td>
+					<td>@flightLog.AircraftManufacturer</td>
+					<td>@flightLog.AircraftModel</td>
+					<td>@flightLog.FlightBeginDisplay</td>
+					<td>@flightLog.FlightEndDisplay</td>
+					<td>@flightLog.HobbsHours</td>
+					<td>@flightLog.NightLandings</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+@section Scripts {
+	<script>PilotFort.geolocation();</script>
+}
